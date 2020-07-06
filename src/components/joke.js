@@ -1,14 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Joke = ({ randomJoke }) => (
+const Joke = ({ joke, children }) => (
     <div>
-        {randomJoke ? randomJoke.text : ''}
+        {joke ? joke.text : ''}
+        {joke ? children : ''}
     </div>
 )
-
-Joke.propTypes = {
-    randomJoke: PropTypes.object.isRequired
-}
 
 export default Joke

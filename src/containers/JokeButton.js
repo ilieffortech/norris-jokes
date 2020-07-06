@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
-import { randomJoke } from '../actions'
 import Button from '../components/button'
+import { jokeActionCreator } from '../actions'
+import randomJoke from './randomJoke'
 
 const mapStateToProps = state => ({
-    joke: state.randomJoke
+
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    toggleAction: (joke) => dispatch(randomJoke(ownProps.jokeAction, joke))
+    toggleAction: (joke) => dispatch(jokeActionCreator(ownProps.jokeAction, joke))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Button)

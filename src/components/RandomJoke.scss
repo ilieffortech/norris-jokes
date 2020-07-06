@@ -1,0 +1,18 @@
+
+.contentcontainer { 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  
+}
+
+.contentcontainer .top {
+    height: 50px;
+
+ }
+
+ .contentcontainer .content {
+    flex-grow: 1;   
+ }
+
+ 

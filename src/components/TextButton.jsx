@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const TextButton = ({ children, onClick }) => {
-    console.log("text button render");
-    return <button onClick={onClick} style={{ color: 'red' }}>{children}</button>
+class TextButton extends Component {
+    render() {
+        return <button onClick={this.props.onClick} style={{ color: 'red' }}>{this.props.children}</button>
+    }
 }
 
 export default TextButton;

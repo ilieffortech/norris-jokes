@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-const NavLink = ({ to, children, type }) => {
-    if (!type || type === 'BACK') return <Link to={to}>{"<-"} {children}</Link>
-    if (type === 'FORWARD') return <Link to={to}>{children} {"->"}</Link>
+class NavLink extends Component {
+    render() {
+        if (!this.props.type || this.props.type === 'BACK') return <Link to={this.props.to}>{"<-"} {this.props.children}</Link>
+        if (this.props.type === 'FORWARD') return <Link to={this.props.to}>{this.props.children} {"->"}</Link>
+    }
 }
 
 export default NavLink;

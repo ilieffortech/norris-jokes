@@ -1,0 +1,14 @@
+.footercontainer { 
+    height: 50px;
+    width : 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+.footercontainer  .center {
+    margin: 5px;
+    flex-grow: 1; 
+ }
+
+ 

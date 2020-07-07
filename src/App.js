@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.scss';
-import Footer from './components/Footer';
+import FooterContainer from './containers/FooterContainer';
 import FavoriteJokePageContainer from './containers/SecondPageContainer';
 import FirstPageContainer from './containers/FirstPageContainer';
 import HeaderContainer from './containers/HeaderContainer';
@@ -20,7 +20,7 @@ function App() {
           </div>
         </Router>
         <div className="footer">
-          <Footer />
+          <FooterContainer />
         </div>
       </div>
     </div>

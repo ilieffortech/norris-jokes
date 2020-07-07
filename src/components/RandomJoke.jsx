@@ -22,12 +22,20 @@ class RandomJokeContainer extends Component {
                 <div className="top">
                     <NavLink to="/favoriteJokes" type="FORWARD">Go to my favorite jokes</NavLink>
                 </div>
+
+
                 <div className="content">
-                    <CustomText>{this.props.joke.text}</CustomText>
-                    <TextButton onClick={() => this.props.dispatchAddJokeToFavorite(this.props.joke)}>+</TextButton>
+                    {
+                        this.props.joke &&
+                        <>
+                            <CustomText>{this.props.joke.text}</CustomText>
+                            <TextButton onClick={() => this.props.dispatchAddJokeToFavorite(this.props.joke)}>+</TextButton>
+                        </>
+                    }
                     <br />
                     <CustomButton onClick={this.handleNewJokeAction}>New Joke</CustomButton>
                 </div>
+
             </div>
         )
     }

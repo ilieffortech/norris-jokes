@@ -1,4 +1,3 @@
-import axios from "axios"
 
 export const randomJoke = (joke) => {
     console.log('in acction ', joke)
@@ -14,5 +13,13 @@ export const jokeActionCreator = (jokeActionType, joke) => {
     return {
         type: jokeActionType,
         joke: joke
+    }
+}
+
+
+export const incrementVisitedTimes = (counter) => {
+    return {
+        type: 'CHANGE_VISITED_TIMES',
+        nrOfVisitedTimes: counter
     }
 }

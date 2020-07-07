@@ -1,5 +1,16 @@
+import React from 'react'
 import { connect } from 'react-redux';
-import Header from '../components/Header'
+
+
+const Header = (props) => (
+    <div className="headercontainer">
+        <div className="left"></div>
+        <div className="center"> </div>
+        <div className="rigth">
+            Favorite jokes: {props.nrOfFavoriteJokes}
+        </div>
+    </div>
+)
 
 const mapStateToProps = state => ({
     nrOfFavoriteJokes: state.favoriteJokes ? state.favoriteJokes.length : 0

@@ -1,5 +1,4 @@
 import React from 'react'
-import './CustomButton.scss'
 
 const CustomButton = ({ children, onClick }) => {
     return <button onClick={onClick} className="customButton">{children}</button>

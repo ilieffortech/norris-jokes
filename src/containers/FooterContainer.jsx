@@ -1,6 +1,26 @@
 import { connect } from 'react-redux';
-import Footer from '../components/Footer'
 import { incrementVisitedTimes } from '../actions'
+import React, { Component } from 'react'
+
+class Footer extends Component {
+    componentDidMount() {
+        if (!this.props.nrOfVisitedTimes) {
+            let nrOfVisitedTimes = localStorage.getItem('nrOfVisitedTimes');
+            let updatedNrOfvisitedTimes = ++nrOfVisitedTimes
+            this.props.incrementVisitedTimes(updatedNrOfvisitedTimes);
+            localStorage.setItem('nrOfVisitedTimes', updatedNrOfvisitedTimes);
+        }
+    }
+
+    render() {
+        return (<div className="footercontainer">
+            <div className="center">
+                You have visited {this.props.nrOfVisitedTimes} times this fan page!
+            </div>
+        </div>)
+    }
+}
+
 
 const mapStateToProps = state => ({
     nrOfVisitedTimes: state.nrOfVisitedTimes

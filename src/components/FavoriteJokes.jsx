@@ -7,7 +7,7 @@ class FavoriteJokeContainer extends Component {
     render() {
         return (
             <div>
-                <BackLink to="/">Back to main page</BackLink>
+                <NavLink to="/" type="BACK">Back to main page</NavLink>
                 <br />
                 <br />
                 <ul>

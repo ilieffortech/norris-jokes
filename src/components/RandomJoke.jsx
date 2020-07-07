@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ForwardLink from '../components/ForwardLink';
+import NavLink from './NavLink';
 import CustomButton from '../components/CustomButton'
 import TextButton from '../components/TextButton';
 import CustomText from './CustomText';
@@ -20,7 +20,7 @@ class RandomJokeContainer extends Component {
         return (
             <div className="contentcontainer">
                 <div className="top">
-                    <ForwardLink to="/favoriteJokes">Go to my favorite jokes</ForwardLink>
+                    <NavLink to="/favoriteJokes" type="FORWARD">Go to my favorite jokes</NavLink>
                 </div>
                 <div className="content">
                     <CustomText>{this.props.joke.text}</CustomText>

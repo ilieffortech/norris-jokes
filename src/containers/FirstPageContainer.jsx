@@ -20,22 +20,30 @@ class RandomJokeContainer extends Component {
         return (
             <div className="contentcontainer">
                 <div className="top">
-                    <NavLink to="/favoriteJokes" type="FORWARD">Go to my favorite jokes</NavLink>
+                    <div className="horizontalContainer">
+                        <div className="left"></div>
+                        <div className="right">
+                            <NavLink to="/favoriteJokes" type="FORWARD">Go to my favorite jokes</NavLink>
+                        </div>
+
+                    </div>
                 </div>
 
 
                 <div className="content">
-                    {
-                        this.props.joke &&
-                        <>
-                            {this.props.joke.text}
-                            <TextButton onClick={() => this.props.dispatchAddJokeToFavorite(this.props.joke)}>+</TextButton>
-                        </>
-                    }
-                    <br />
-                    <CustomButton onClick={this.handleNewJokeAction}>New Joke</CustomButton>
-                </div>
+                    <div className="centeredContainer">
+                        {
+                            this.props.joke &&
+                            <span>
+                                {this.props.joke.text}
+                                <TextButton onClick={() => this.props.dispatchAddJokeToFavorite(this.props.joke)}>+</TextButton>
+                            </span>
+                        }
 
+                        <CustomButton onClick={this.handleNewJokeAction}>New Joke</CustomButton>
+                    </div>
+
+                </div>
             </div>
         )
     }

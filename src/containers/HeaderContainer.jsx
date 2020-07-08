@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 const Header = (props) => (
-    <div className="headercontainer">
+    <div className="horizontalContainer">
         <div className="left"></div>
         <div className="center"> </div>
         <div className="rigth">

@@ -23,37 +23,44 @@ class FavoriteJokeContainer extends Component {
         let editJokeId = this.state.editJoke ? this.state.editJoke.id : 0;
         let editJokeText = this.state.editJoke ? this.state.editJoke.text : '';
         return (
-            <div>
-                <NavLink to="/" type="BACK">Back to main page</NavLink>
-                <br />
-                <br />
-                <ul>
-                    {this.props.jokes && this.props.jokes.map((joke) => (
-                        <li>
-                            {joke.id !== editJokeId &&
-                                <>
+            <div className="contentcontainer">
+                <div className="top">
+                    <div className="horizontalContainer">
+                        <div className="left"><NavLink to="/" type="BACK">Back to main page</NavLink></div>
+                    </div>
+                </div>
 
-                                    {joke.text}
+                <div className="content">
+                    <div className="centeredContainer">
+                        <ul>
+                            {this.props.jokes && this.props.jokes.map((joke) => (
+                                <li>
+                                    {joke.id !== editJokeId &&
+                                        <>
 
-                                    <TextButton onClick={() => this.setState({ editJoke: { ...joke } })}>edit</TextButton>
-                                    <TextButton onClick={() => this.props.dispatchRemoveJoke(joke)}>remove</TextButton>
-                                </>
+                                            {joke.text}
+
+                                            <TextButton onClick={() => this.setState({ editJoke: { ...joke } })}>edit</TextButton>
+                                            <TextButton onClick={() => this.props.dispatchRemoveJoke(joke)}>remove</TextButton>
+                                        </>
+                                    }
+
+                                    {joke.id === editJokeId &&
+                                        <>
+                                            <input value={editJokeText} onChange={this.handleTextChanged} />
+                                            <TextButton onClick={() => this.handleSaveBtnClick()}>save</TextButton>
+                                            <TextButton onClick={() => this.setState({ editJoke: null })}>cancel</TextButton>
+                                        </>
+
+                                    }
+
+                                </li>
+                            ))
                             }
-
-                            {joke.id === editJokeId &&
-                                <>
-                                    <input value={editJokeText} onChange={this.handleTextChanged} />
-                                    <TextButton onClick={() => this.handleSaveBtnClick()}>save</TextButton>
-                                    <TextButton onClick={() => this.setState({ editJoke: null })}>cancel</TextButton>
-                                </>
-
-                            }
-
-                        </li>
-                    ))
-                    }
-                </ul>
-            </div >
+                        </ul>
+                    </div>
+                </div >
+            </div>
         )
     }
 }

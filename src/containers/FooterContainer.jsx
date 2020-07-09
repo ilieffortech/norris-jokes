@@ -13,12 +13,10 @@ class Footer extends Component {
     }
 
     render() {
-        return (<div className="horizontalContainer">
-            <div className="left"></div>
+        return (<div className="footer-container">
             <div className="center">
                 You have visited {this.props.nrOfVisitedTimes} times this fan page!
             </div>
-            <div className="right"></div>
         </div>)
     }
 }

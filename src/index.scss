@@ -1,6 +1,12 @@
-@import './styles';
-
-
+@import './styles/commons';
+@import './styles/CustomButton';
+@import './styles/commonsPage.scss';
+@import './styles/TextButton';
+@import './styles/App';
+@import './styles/Header';
+@import './styles/Footer';
+@import './styles/FirstPage';
+@import './styles/SecondPage';
 
 body {
   margin: 0;
@@ -16,4 +22,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

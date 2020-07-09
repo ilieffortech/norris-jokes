@@ -1,3 +1,19 @@
 $text-color: blue;
 $link-color: red;
 $small-container-height: 50px;
+$small-padding : 10px;
+$medium-padding : 20px;
+
+.box-border{
+   border: black 1px solid;
+}
+
+.small-box {
+  height: $small-container-height;
+  padding: $small-padding ;
+ }
+
+.small-box-border {
+  @extend .box-border;  
+  @extend .small-box;
+ }

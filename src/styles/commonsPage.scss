@@ -1,0 +1,36 @@
+
+.horizontal-container { 
+    height: $small-container-height;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+} 
+
+.content-container { 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-container .top {
+   @extend .small-box;
+ }
+
+
+ .content-container .content {
+    flex-grow: 1;  
+ }
+
+.centered-container {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+
+
+
+
+

@@ -1,0 +1,21 @@
+.main-container { 
+    height: 100vh;
+    width : 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .middle {
+  @extend .box-border;  
+  flex-grow: 1; 
+}
+
+.main-container .header {
+  @extend .small-box-border;
+}
+
+.main-container .footer {
+  @extend .small-box-border;
+}
+
+ 

@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 
 const Header = (props) => (
-    <div className="horizontalContainer">
-        <div className="left"></div>
-        <div className="center"> </div>
+    <div className="header-container">
         <div className="rigth">
             Favorite jokes: {props.nrOfFavoriteJokes}
         </div>

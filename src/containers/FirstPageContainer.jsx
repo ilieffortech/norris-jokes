@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { randomJoke, jokeActionCreator } from '../actions'
-import axios from 'axios'
+import { randomJokeAPI, jokeActionCreator, ADD_JOKE_TO_FAVORITES_ASYNC } from '../actions'
 import NavLink from '../components/NavLink'
 import TextButton from '../components/TextButton'
 import CustomButton from '../components/CustomButton'
 
 class RandomJokeContainer extends Component {
 
+    componentDidMount() {
+        this.props.dispatchRandomJokeAPI();
+    }
+
     handleNewJokeAction = () => {
-        console.log('handle new jock')
-        axios.post('http://api.icndb.com/jokes/random/1')
-            .then(res => {
-                this.props.dispatchRandomJoke({ text: res.data.value[0].joke });
-            })
+        this.props.dispatchRandomJokeAPI();
     }
 
     render() {
         return (
-            <div className="contentcontainer">
+            <div className="content-container">
                 <div className="top">
-                    <div className="horizontalContainer">
+                    <div className="horizontal-container">
                         <div className="left"></div>
                         <div className="right">
                             <NavLink to="/favoriteJokes" type="FORWARD">Go to my favorite jokes</NavLink>
@@ -31,10 +30,10 @@ class RandomJokeContainer extends Component {
 
 
                 <div className="content">
-                    <div className="centeredContainer">
+                    <div className="centered-container">
                         {
                             this.props.joke &&
-                            <span>
+                            <span className="random-joke-text">
                                 {this.props.joke.text}
                                 <TextButton onClick={() => this.props.dispatchAddJokeToFavorite(this.props.joke)}>+</TextButton>
                             </span>
@@ -54,8 +53,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    dispatchRandomJoke: (joke) => dispatch(randomJoke(joke)),
-    dispatchAddJokeToFavorite: (joke) => dispatch(jokeActionCreator('ADD_JOKE_TO_FAVORITES', joke))
+    dispatchRandomJokeAPI: () => dispatch(randomJokeAPI()),
+    dispatchAddJokeToFavorite: (joke) => dispatch(jokeActionCreator(ADD_JOKE_TO_FAVORITES_ASYNC, joke))
 })
 
 

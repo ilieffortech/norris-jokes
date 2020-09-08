@@ -6,3 +6,5 @@ export const fetchJokeAPI = () => (axios.post('http://api.icndb.com/jokes/random
     .then(res => {
         return ({ text: res.data.value[0].joke });
     }))
+
+    export const C3='C3'

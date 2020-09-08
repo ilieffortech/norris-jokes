@@ -35,3 +35,5 @@ export const incrementVisitedTimes = (counter) => {
         nrOfVisitedTimes: counter
     }
 }
+
+export const C1 = 'C1';
